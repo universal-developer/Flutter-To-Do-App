@@ -122,13 +122,13 @@ class _WelcomeScreenThirdState extends State<WelcomeScreenThird> {
                             style: TextStyle(fontSize: 17, color: greyColor)),
                       ),
                       Container(
-                        width: 100,
+                        width: 170,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                         ),
                         child: ElevatedButton(
-                          child: const Text('NEXT'),
+                          child: const Text('GET STARTED'),
                           onPressed: () {
                             Navigator.push(
                                 context,
