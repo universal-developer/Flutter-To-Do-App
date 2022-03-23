@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:up_todo_app/screens/welcome_screen_2.dart';
-import 'package:up_todo_app/screens/login_and_registration_screen.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_1.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
+import 'package:up_todo_app/screens/welcome_screens/login_and_registration_screen.dart';
 
-class WelcomeScreenFirst extends StatefulWidget {
-  WelcomeScreenFirst({Key? key}) : super(key: key);
+class WelcomeScreenSecond extends StatefulWidget {
+  WelcomeScreenSecond({Key? key}) : super(key: key);
 
   @override
-  State<WelcomeScreenFirst> createState() => _WelcomeScreenFirstState();
+  State<WelcomeScreenSecond> createState() => _WelcomeScreenSecondState();
 }
 
-class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
+class _WelcomeScreenSecondState extends State<WelcomeScreenSecond> {
   final _totalDots = 3;
-  double _currentPosition = 0.0;
+  double _currentPosition = 1.0;
 
   double _validPosition(double position) {
     if (position >= _totalDots) return 0;
@@ -29,8 +30,9 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: new ThemeData(scaffoldBackgroundColor: backgroundColor),
-      home: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+      home: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.only(bottom: 25, left: 15, right: 15),
           child: Scaffold(
             appBar: AppBar(
               backgroundColor: backgroundColor,
@@ -51,7 +53,7 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
               children: [
                 Center(
                   child: Image(
-                    image: AssetImage('assets/welcome_screen_intro.png'),
+                    image: AssetImage('assets/welcome_screen_2_intro.png'),
                   ),
                 ),
                 const SizedBox(
@@ -61,9 +63,7 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                   child: DotsIndicator(
                     dotsCount: _totalDots,
                     position: _currentPosition,
-                    onTap: (position) {
-                      setState(() => _currentPosition = position);
-                    },
+                    onTap: (position) {},
                     decorator: DotsDecorator(
                       size: const Size.square(9.0),
                       activeColor: whiteColor,
@@ -78,18 +78,18 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                 ),
                 Center(
                     child: Text(
-                  'Manage your tasks',
+                  'Create daily routine',
                   style: TextStyle(
                       color: whiteColor,
                       fontSize: 32,
                       fontWeight: FontWeight.bold),
                 )),
                 const SizedBox(
-                  height: 30,
+                  height: 23,
                 ),
                 Center(
                     child: Text(
-                  'You can easily manage all of your daily',
+                  'In Uptodo  you can create your ',
                   style: TextStyle(
                       color: whiteColor,
                       fontSize: 16.5,
@@ -97,7 +97,7 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                 )),
                 Center(
                     child: Text(
-                  'tasks in DoMe for free',
+                  'personalized routine to stay productive',
                   style: TextStyle(
                       color: whiteColor,
                       fontSize: 16.5,
@@ -110,7 +110,12 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WelcomeScreenFirst()));
+                      },
                       child: Text('BACK',
                           style: TextStyle(fontSize: 17, color: greyColor)),
                     ),
@@ -126,7 +131,7 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => WelcomeScreenSecond(),
+                                builder: (context) => WelcomeScreenThird(),
                               ));
                         },
                         style: ElevatedButton.styleFrom(
@@ -139,7 +144,9 @@ class _WelcomeScreenFirstState extends State<WelcomeScreenFirst> {
                 ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:up_todo_app/screens/welcome_screen_1.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_1.dart';
 import 'package:up_todo_app/colors.dart';
 
 void main() {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:up_todo_app/screens/login_and_registration_screen.dart';
-import 'package:up_todo_app/screens/welcome_screen_1.dart';
-import 'package:up_todo_app/screens/welcome_screen_2.dart';
+import 'package:up_todo_app/screens/welcome_screens/login_and_registration_screen.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_1.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_2.dart';
 
 class WelcomeScreenThird extends StatefulWidget {
   WelcomeScreenThird({Key? key}) : super(key: key);
