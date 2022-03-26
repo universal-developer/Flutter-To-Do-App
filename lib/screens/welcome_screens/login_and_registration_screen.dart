@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
+import 'package:up_todo_app/screens/login_and_registration/login.dart';
+import 'package:up_todo_app/screens/login_and_registration/registration.dart';
 
 class LoginAndRegistrationScreeen extends StatefulWidget {
   LoginAndRegistrationScreeen({Key? key}) : super(key: key);
@@ -83,7 +85,7 @@ class _LoginAndRegistrationScreeenState
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => WelcomeScreenThird(),
+                        builder: (context) => LoginScreen(),
                       ));
                 },
                 style: ElevatedButton.styleFrom(
