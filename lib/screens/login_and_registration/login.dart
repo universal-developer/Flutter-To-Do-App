@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -27,11 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
           elevation: 0,
           leading: BackButton(
             onPressed: () {
-              /*Navigator.pop(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => WelcomeScreenThird(),
-                      ));*/
+              Navigator.pop(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WelcomeScreenThird(),
+                  ));
             },
           ),
         ),
