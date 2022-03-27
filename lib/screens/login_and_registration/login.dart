@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:up_todo_app/screens/home/bottom_navbar_screens.dart';
 import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
 import 'package:up_todo_app/screens/home/home_screen.dart';
 
@@ -201,7 +202,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomeScreen()),
+                                  builder: (context) => BottomNavBar()),
                             );
                           },
                           child: Row(

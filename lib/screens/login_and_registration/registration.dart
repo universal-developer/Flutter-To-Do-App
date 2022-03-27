@@ -269,7 +269,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       height: 55,
                       child: ElevatedButton(
                           onPressed: () {
-                            /*Navigator.push(
+                            /*`Navigator.push`(
                           context,
                           MaterialPageRoute(
                               builder: (context) => const WelcomeScreen()),
