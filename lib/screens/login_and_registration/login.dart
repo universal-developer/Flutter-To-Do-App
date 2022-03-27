@@ -3,6 +3,7 @@ import 'package:up_todo_app/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
+import 'package:up_todo_app/screens/home/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -197,12 +198,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 55,
                       child: ElevatedButton(
                           onPressed: () {
-                            /*Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const WelcomeScreen()),
-                        );
-                        setState(() {});*/
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()),
+                            );
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

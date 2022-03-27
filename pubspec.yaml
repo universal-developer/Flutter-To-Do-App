@@ -65,6 +65,8 @@ flutter:
   - assets/welcome_screen_intro.png
   - assets/welcome_screen_2_intro.png
   - assets/welcome_screen_3_intro.png
+  - assets/Home_Screen/circle_avatar.png
+  - assets/Home_Screen/home_screen_image.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
