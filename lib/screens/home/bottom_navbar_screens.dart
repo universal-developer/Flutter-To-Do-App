@@ -34,7 +34,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double height = 56;
+    double height = 65;
 
     final primaryColor = purpleColor;
     final secondaryColor = greyColor;
@@ -54,7 +54,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             CustomPaint(
               size: Size(size.width, height),
               painter: BottomNavCurvePainter(
-                  backgroundColor: backgroundColor,
+                  backgroundColor: Color(0xFF363536),
                   shadowColor: shadowColor,
                   elevation: elevation),
             ),
@@ -62,7 +62,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               heightFactor: 0.2,
               child: FloatingActionButton(
                   backgroundColor: purpleColor,
-                  child: Icon(Icons.shopping_basket),
+                  child: Icon(CupertinoIcons.plus),
                   elevation: 0.1,
                   onPressed: () {
                     setState(() {
@@ -76,8 +76,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   NavBarIcon(
-                    text: "Home",
-                    icon: Icons.home_outlined,
+                    text: "Index",
+                    icon: CupertinoIcons.house_fill,
                     selected: _selectedIndex == 0 ? true : false,
                     onPressed: () {
                       setState(() {
@@ -88,8 +88,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     selectedColor: whiteColor,
                   ),
                   NavBarIcon(
-                    text: "Search",
-                    icon: Icons.search_outlined,
+                    text: "Calendar",
+                    icon: CupertinoIcons.calendar,
                     selected: _selectedIndex == 1 ? true : false,
                     onPressed: () {
                       setState(() {
@@ -101,8 +101,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   ),
                   SizedBox(width: 56),
                   NavBarIcon(
-                      text: "Cart",
-                      icon: Icons.local_grocery_store_outlined,
+                      text: "Focuse",
+                      icon: CupertinoIcons.clock,
                       selected: _selectedIndex == 3 ? true : false,
                       onPressed: () {
                         setState(() {
@@ -112,8 +112,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
                       defaultColor: greyColor,
                       selectedColor: whiteColor),
                   NavBarIcon(
-                    text: "Calendar",
-                    icon: Icons.date_range_outlined,
+                    text: "Profile",
+                    icon: CupertinoIcons.person,
                     selected: _selectedIndex == 4 ? true : false,
                     onPressed: () {
                       setState(() {
@@ -205,6 +205,7 @@ class NavBarIcon extends StatelessWidget {
             color: selected ? selectedColor : defaultColor,
           ),
         ),
+        Text(text, style: TextStyle(color: whiteColor))
       ],
     );
   }
