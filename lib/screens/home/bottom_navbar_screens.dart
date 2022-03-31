@@ -1,16 +1,13 @@
-import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
-import 'package:up_todo_app/screens/home/add_item_screen.dart';
 import 'package:up_todo_app/screens/home/calendar_screen.dart';
 import 'package:up_todo_app/screens/home/focuse_screen.dart';
 import 'package:up_todo_app/screens/home/home_screen.dart';
 import 'package:up_todo_app/screens/home/profile_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
-  BottomNavBar({Key? key}) : super(key: key);
+  const BottomNavBar({Key? key}) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -18,57 +15,119 @@ class BottomNavBar extends StatefulWidget {
 
 class _BottomNavBarState extends State<BottomNavBar> {
   final _screens = [
-    HomeScreen(),
-    CalendarScreen(),
-    FocuseScreen(),
-    ProfileScreen()
+    const HomeScreen(),
+    const CalendarScreen(),
+    const FocuseScreen(),
+    const ProfileScreen()
   ];
 
   int _selectedIndex = 0;
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: backgroundColor,
+          title: const Text('AlertDialog Title', style: TextStyle(color: Colors.white)),
+          content: Stack(
+              children: <Widget>[
+                Container(
+                  child: TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    style: const TextStyle(fontSize: 14, color: Colors.white),
+                    decoration: const InputDecoration(
+                      /*suffixIcon: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      _emailController.text.isNotEmpty
+                          ? Icons.check_box
+                          : null,
+                      size: 15,
+                    ),
+                    onPressed: () {}),
+                    */
+                      filled: true,
+                      labelText: 'Enter Your Username',
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      hoverColor: Colors.grey,
+                      focusColor: Colors.grey,
+                      hintText: 'required',
+                      hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                      labelStyle: TextStyle(color: Colors.grey),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 20.0),
+                      border: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                    ),
+                    /*onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                      ? 'Do not use the @ char.'
+                      : null;
+                },*/
+                  ),
+                ),
+
+              ],
+            ),
+          actions: <Widget>[
+
+            Row(
+              children: [
+                IconButton(
+                    onPressed: () {Navigator.of(context).pop();},
+                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+                IconButton(
+                    onPressed: () {Navigator.of(context).pop();},
+                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+
+                IconButton(
+                    onPressed: () {Navigator.of(context).pop();},
+                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+                Spacer(),
+
+                IconButton(
+                    onPressed: () {Navigator.of(context).pop();},
+                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+              ],
+            ),
+          ],
+        );
+      },
+    );
   }
 
-  Future _openToDo() => showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-          title: Text('Add new task'),
-          backgroundColor: backgroundColor,
-          content: TextField(
-            obscureText: true,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              labelText: 'Password',
-            ),
-          ),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
-          ],
-        ),
-      );
+
+
+
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double height = 65;
 
-    final primaryColor = purpleColor;
-    final secondaryColor = greyColor;
-    final accentColor = whiteColor;
 
-    final shadowColor = Colors.grey; //color of Navbar shadow
-    double elevation = 100; //Elevation of the bottom Navbar
+    const shadowColor = Colors.grey;
+    double elevation = 100;
 
     return Scaffold(
       extendBody: true,
@@ -81,7 +140,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             CustomPaint(
               size: Size(size.width, height),
               painter: BottomNavCurvePainter(
-                  backgroundColor: Color(0xFF363536),
+                  backgroundColor: const Color(0xFF363536),
                   shadowColor: shadowColor,
                   elevation: elevation),
             ),
@@ -89,11 +148,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
               heightFactor: 0.2,
               child: FloatingActionButton(
                   backgroundColor: purpleColor,
-                  child: Icon(CupertinoIcons.plus),
+                  child: const Icon(CupertinoIcons.plus),
                   elevation: 0.1,
-                  onPressed: _openToDo),
+                  onPressed: _showMyDialog),
             ),
-            Container(
+            SizedBox(
               height: height,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -122,7 +181,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     defaultColor: greyColor,
                     selectedColor: whiteColor,
                   ),
-                  SizedBox(width: 56),
+                  const SizedBox(width: 56),
                   NavBarIcon(
                       text: "Focuse",
                       icon: CupertinoIcons.clock,
@@ -175,7 +234,6 @@ class BottomNavCurvePainter extends CustomPainter {
     Path path = Path();
 
     double insetCurveBeginnningX = size.width / 2 - insetRadius;
-    double insetCurveEndX = size.width / 2 + insetRadius;
 
     path.lineTo(insetCurveBeginnningX, 0);
 

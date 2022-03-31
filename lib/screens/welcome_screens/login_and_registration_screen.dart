@@ -5,7 +5,7 @@ import 'package:up_todo_app/screens/login_and_registration/login.dart';
 import 'package:up_todo_app/screens/login_and_registration/registration.dart';
 
 class LoginAndRegistrationScreeen extends StatefulWidget {
-  LoginAndRegistrationScreeen({Key? key}) : super(key: key);
+  const LoginAndRegistrationScreeen({Key? key}) : super(key: key);
 
   @override
   State<LoginAndRegistrationScreeen> createState() =>
@@ -17,7 +17,7 @@ class _LoginAndRegistrationScreeenState
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: new ThemeData(scaffoldBackgroundColor: backgroundColor),
+      theme: ThemeData(scaffoldBackgroundColor: backgroundColor),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: backgroundColor,
@@ -52,7 +52,7 @@ class _LoginAndRegistrationScreeenState
               const SizedBox(
                 height: 40,
               ),
-              Center(
+              const Center(
                   child: Text(
                 'Please login to your account or create',
                 style: TextStyle(
@@ -63,13 +63,13 @@ class _LoginAndRegistrationScreeenState
               const SizedBox(
                 height: 5,
               ),
-              Center(
+              const Center(
                   child: Text(
                 'new account to continue',
                 style: TextStyle(
                     color: Colors.white54,
-                    fontSize: 16.5,
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.5),
               )),
               const SizedBox(
                 height: 450,
@@ -77,9 +77,6 @@ class _LoginAndRegistrationScreeenState
               Container(
                 width: 300,
                 height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                ),
                 child: ElevatedButton(
                   child: const Text('NEXT'),
                   onPressed: () {
@@ -94,11 +91,14 @@ class _LoginAndRegistrationScreeenState
                       textStyle: const TextStyle(
                           fontSize: 17, fontWeight: FontWeight.bold)),
                 ),
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                ),
               ),
               const SizedBox(
                 height: 25,
               ),
-              Container(
+              SizedBox(
                 width: 300,
                 height: 50,
                 child: OutlinedButton(
@@ -120,9 +120,9 @@ class _LoginAndRegistrationScreeenState
                           builder: (context) => RegistrationScreen(),
                         ));
                   },
-                  child: Text(
+                  child: const Text(
                     'CREATE ACCOUNT',
-                    style: const TextStyle(
+                    style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,
                         fontWeight: FontWeight.bold),

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:up_todo_app/screens/welcome_screens/welcome_screen_3.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  RegistrationScreen({Key? key}) : super(key: key);
+  const RegistrationScreen({Key? key}) : super(key: key);
 
   @override
   State<RegistrationScreen> createState() => _RegistrationScreenState();
@@ -16,13 +15,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
-  bool _isObscure = true;
   bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: new ThemeData(scaffoldBackgroundColor: backgroundColor),
+      theme: ThemeData(scaffoldBackgroundColor: backgroundColor),
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: backgroundColor,
@@ -38,7 +36,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,209 +54,197 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const SizedBox(
                   height: 40,
                 ),
-                Container(
-                  child: Text('Username',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: 15,
-                          color: Colors.white)),
-                ),
+                const Text('Username',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize: 15,
+                        color: Colors.white)),
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  child: TextFormField(
-                    controller: _nameController,
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: InputDecoration(
-                      /*suffixIcon: IconButton(
-                      color: Colors.white,
-                      icon: Icon(
-                        _emailController.text.isNotEmpty
-                            ? Icons.check_box
-                            : null,
-                        size: 15,
-                      ),
-                      onPressed: () {}),
-                      */
-                      filled: true,
-                      labelText: 'Enter Your Username',
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      hoverColor: Colors.grey,
-                      focusColor: Colors.grey,
-                      hintText: 'required',
-                      hintStyle: const TextStyle(color: Color(0xFF6D6D6D)),
-                      labelStyle: const TextStyle(color: Colors.grey),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 20.0),
-                      border: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      errorBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
+                TextFormField(
+                  controller: _nameController,
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  decoration: const InputDecoration(
+                    /*suffixIcon: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      _emailController.text.isNotEmpty
+                          ? Icons.check_box
+                          : null,
+                      size: 15,
                     ),
-                    /*onSaved: (String? value) {
-                    // This optional block of code can be used to run
-                    // code when the user saves the form.
-                  },
-                  validator: (String? value) {
-                    return (value != null && value.contains('@'))
-                        ? 'Do not use the @ char.'
-                        : null;
-                  },*/
+                    onPressed: () {}),
+                    */
+                    filled: true,
+                    labelText: 'Enter Your Username',
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    hoverColor: Colors.grey,
+                    focusColor: Colors.grey,
+                    hintText: 'required',
+                    hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                    labelStyle: TextStyle(color: Colors.grey),
+                    contentPadding: EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
                   ),
+                  /*onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                      ? 'Do not use the @ char.'
+                      : null;
+                },*/
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  child: Text('Password',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: 15,
-                          color: Colors.white)),
-                ),
+                const Text('Password',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize: 15,
+                        color: Colors.white)),
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  child: TextFormField(
-                    controller: _passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    maxLength: 16,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: InputDecoration(
-                      /*suffixIcon: IconButton(
-                      color: Colors.white,
-                      icon: Icon(
-                        _emailController.text.isNotEmpty
-                            ? Icons.check_box
-                            : null,
-                        size: 15,
-                      ),
-                      onPressed: () {}),
-                      */
-
-                      filled: true,
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      labelText: '***********',
-                      hoverColor: Colors.grey,
-                      focusColor: Colors.grey,
-                      hintText: 'required',
-                      hintStyle: const TextStyle(color: Color(0xFF6D6D6D)),
-                      labelStyle: const TextStyle(color: Colors.grey),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 20.0),
-                      border: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      errorBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
+                TextFormField(
+                  controller: _passwordController,
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  maxLength: 16,
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  decoration: const InputDecoration(
+                    /*suffixIcon: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      _emailController.text.isNotEmpty
+                          ? Icons.check_box
+                          : null,
+                      size: 15,
                     ),
-                    /*onSaved: (String? value) {
-                    // This optional block of code can be used to run
-                    // code when the user saves the form.
-                  },
-                  validator: (String? value) {
-                    return (value != null && value.contains('@'))
-                        ? 'Do not use the @ char.'
-                        : null;
-                  },*/
+                    onPressed: () {}),
+                    */
+
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    labelText: '***********',
+                    hoverColor: Colors.grey,
+                    focusColor: Colors.grey,
+                    hintText: 'required',
+                    hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                    labelStyle: TextStyle(color: Colors.grey),
+                    contentPadding: EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
                   ),
+                  /*onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                      ? 'Do not use the @ char.'
+                      : null;
+                },*/
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                Container(
-                  child: Text('Confirm Password',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w200,
-                          fontSize: 15,
-                          color: Colors.white)),
-                ),
+                const Text('Confirm Password',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w200,
+                        fontSize: 15,
+                        color: Colors.white)),
                 const SizedBox(
                   height: 15,
                 ),
-                Container(
-                  child: TextFormField(
-                    controller: _confirmPasswordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    maxLength: 16,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: InputDecoration(
-                      /*suffixIcon: IconButton(
-                      color: Colors.white,
-                      icon: Icon(
-                        _emailController.text.isNotEmpty
-                            ? Icons.check_box
-                            : null,
-                        size: 15,
-                      ),
-                      onPressed: () {}),
-                      */
-
-                      filled: true,
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      labelText: '***********',
-                      hoverColor: Colors.grey,
-                      focusColor: Colors.grey,
-                      hintText: 'required',
-                      hintStyle: const TextStyle(color: Color(0xFF6D6D6D)),
-                      labelStyle: const TextStyle(color: Colors.grey),
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 20.0),
-                      border: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      errorBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
+                TextFormField(
+                  controller: _confirmPasswordController,
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
+                  maxLength: 16,
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  decoration: const InputDecoration(
+                    /*suffixIcon: IconButton(
+                    color: Colors.white,
+                    icon: Icon(
+                      _emailController.text.isNotEmpty
+                          ? Icons.check_box
+                          : null,
+                      size: 15,
                     ),
-                    /*onSaved: (String? value) {
-                    // This optional block of code can be used to run
-                    // code when the user saves the form.
-                  },
-                  validator: (String? value) {
-                    return (value != null && value.contains('@'))
-                        ? 'Do not use the @ char.'
-                        : null;
-                  },*/
+                    onPressed: () {}),
+                    */
+
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    labelText: '***********',
+                    hoverColor: Colors.grey,
+                    focusColor: Colors.grey,
+                    hintText: 'required',
+                    hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                    labelStyle: TextStyle(color: Colors.grey),
+                    contentPadding: EdgeInsets.symmetric(
+                        vertical: 0.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
                   ),
+                  /*onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                      ? 'Do not use the @ char.'
+                      : null;
+                },*/
                 ),
                 const SizedBox(height: 20),
                 Center(

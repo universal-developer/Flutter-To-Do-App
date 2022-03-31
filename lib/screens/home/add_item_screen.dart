@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AddItemScreen extends StatefulWidget {
-  AddItemScreen({Key? key}) : super(key: key);
+  const AddItemScreen({Key? key}) : super(key: key);
 
   @override
   State<AddItemScreen> createState() => _AddItemScreenState();
@@ -14,10 +14,10 @@ class _AddItemScreenState extends State<AddItemScreen> {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: const Text('Material App Bar'),
         ),
         body: Center(
-          child: Container(child: Text('Hi')),
+          child: Container(child: const Text('Hi')),
         ),
       ),
     );

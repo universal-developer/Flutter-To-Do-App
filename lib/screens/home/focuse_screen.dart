@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FocuseScreen extends StatefulWidget {
-  FocuseScreen({Key? key}) : super(key: key);
+  const FocuseScreen({Key? key}) : super(key: key);
 
   @override
   State<FocuseScreen> createState() => _FocuseScreenState();
@@ -14,12 +14,10 @@ class _FocuseScreenState extends State<FocuseScreen> {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: const Text('Material App Bar'),
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
+        body: const Center(
+          child: Text('Hello World'),
         ),
       ),
     );
