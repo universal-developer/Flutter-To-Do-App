@@ -29,31 +29,38 @@ class _BottomNavBarState extends State<BottomNavBar> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          backgroundColor: backgroundColor,
-          title: const Text('AlertDialog Title', style: TextStyle(color: Colors.white)),
-          content: Stack(
-              children: <Widget>[
-                Container(
-                  child: TextFormField(
+          insetPadding: const EdgeInsets.all(0),
+          shape: const RoundedRectangleBorder(
+              borderRadius:
+              BorderRadius.all(
+                  Radius.circular(10.0))),
+            backgroundColor: Color(0xFF363636),
+            title: const Text('Add Task', style: TextStyle(color: Colors.white)),
+            content: SizedBox(
+              width: 300,
+              height: 125,
+              child: Column(
+                children: <Widget>[
+                  TextFormField(
                     keyboardType: TextInputType.emailAddress,
                     style: const TextStyle(fontSize: 14, color: Colors.white),
                     decoration: const InputDecoration(
                       /*suffixIcon: IconButton(
-                    color: Colors.white,
-                    icon: Icon(
-                      _emailController.text.isNotEmpty
-                          ? Icons.check_box
-                          : null,
-                      size: 15,
-                    ),
-                    onPressed: () {}),
-                    */
-                      filled: true,
-                      labelText: 'Enter Your Username',
+                  color: Colors.white,
+                  icon: Icon(
+                    _emailController.text.isNotEmpty
+                        ? Icons.check_box
+                        : null,
+                    size: 15,
+                  ),
+                  onPressed: () {}),
+                  */
+                      filled: false,
+                      labelText: 'Task Name',
                       floatingLabelBehavior: FloatingLabelBehavior.never,
                       hoverColor: Colors.grey,
                       focusColor: Colors.grey,
-                      hintText: 'required',
+                      hintText: 'Do Math',
                       hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
                       labelStyle: TextStyle(color: Colors.grey),
                       contentPadding: EdgeInsets.symmetric(
@@ -81,13 +88,67 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 },
                 validator: (String? value) {
                   return (value != null && value.contains('@'))
-                      ? 'Do not use the @ char.'
-                      : null;
+                    ? 'Do not use the @ char.'
+                    : null;
                 },*/
                   ),
-                ),
+                  const SizedBox(height: 25),
+                  TextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    style: const TextStyle(fontSize: 14, color: Colors.white),
+                    decoration: const InputDecoration(
+                      /*suffixIcon: IconButton(
+                  color: Colors.white,
+                  icon: Icon(
+                    _emailController.text.isNotEmpty
+                        ? Icons.check_box
+                        : null,
+                    size: 15,
+                  ),
+                  onPressed: () {}),
+                  */
+                      filled: false,
+                      labelText: 'Description',
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      hoverColor: Colors.grey,
+                      focusColor: Colors.grey,
+                      hintText: 'Solve the equation',
+                      hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                      labelStyle: TextStyle(color: Colors.grey),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 0.0, horizontal: 20.0),
+                      border: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide:
+                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                      ),
+                    ),
+                    /*onSaved: (String? value) {
+                  // This optional block of code can be used to run
+                  // code when the user saves the form.
+                },
+                validator: (String? value) {
+                  return (value != null && value.contains('@'))
+                    ? 'Do not use the @ char.'
+                    : null;
+                },*/
+                  ),
 
-              ],
+
+                ],
+              ),
+
             ),
           actions: <Widget>[
 
@@ -95,19 +156,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
               children: [
                 IconButton(
                     onPressed: () {Navigator.of(context).pop();},
-                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+                    icon: Icon(CupertinoIcons.clock, color: whiteColor)),
                 IconButton(
                     onPressed: () {Navigator.of(context).pop();},
-                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+                    icon: Icon(CupertinoIcons.tag, color: whiteColor)),
 
                 IconButton(
                     onPressed: () {Navigator.of(context).pop();},
-                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
-                Spacer(),
+                    icon: Icon(CupertinoIcons.flag, color: whiteColor)),
+                const Spacer(),
 
                 IconButton(
                     onPressed: () {Navigator.of(context).pop();},
-                    icon: Icon(CupertinoIcons.line_horizontal_3_decrease, color: whiteColor)),
+                    icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: whiteColor)),
               ],
             ),
           ],
