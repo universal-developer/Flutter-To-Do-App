@@ -17,9 +17,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
           title: Text('Material App Bar'),
         ),
         body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
+          child: Container(child: Text('Hi')),
         ),
       ),
     );

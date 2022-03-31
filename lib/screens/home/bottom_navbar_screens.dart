@@ -18,7 +18,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final _screens = [
     HomeScreen(),
     CalendarScreen(),
-    AddItemScreen(),
     FocuseScreen(),
     ProfileScreen()
   ];
@@ -30,6 +29,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
       _selectedIndex = index;
     });
   }
+
+  Future _openToDo() => showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+            backgroundColor: Colors.transparent,
+            insetPadding: EdgeInsets.all(10),
+            title: Container(
+                width: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: backgroundColor,
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    'Add New Task',
+                    style: TextStyle(color: whiteColor),
+                  ),
+                )),
+            content: Stack(
+              children: <Widget>[
+                TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                  ),
+                ),
+              ],
+            )),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +94,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   backgroundColor: purpleColor,
                   child: Icon(CupertinoIcons.plus),
                   elevation: 0.1,
-                  onPressed: () {
-                    setState(() {
-                      _selectedIndex = 2;
-                    });
-                  }),
+                  onPressed: _openToDo),
             ),
             Container(
               height: height,
@@ -103,10 +129,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   NavBarIcon(
                       text: "Focuse",
                       icon: CupertinoIcons.clock,
-                      selected: _selectedIndex == 3 ? true : false,
+                      selected: _selectedIndex == 2 ? true : false,
                       onPressed: () {
                         setState(() {
-                          _selectedIndex = 3;
+                          _selectedIndex = 2;
                         });
                       },
                       defaultColor: greyColor,
@@ -114,10 +140,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   NavBarIcon(
                     text: "Profile",
                     icon: CupertinoIcons.person,
-                    selected: _selectedIndex == 4 ? true : false,
+                    selected: _selectedIndex == 3 ? true : false,
                     onPressed: () {
                       setState(() {
-                        _selectedIndex = 4;
+                        _selectedIndex = 3;
                       });
                     },
                     selectedColor: whiteColor,
