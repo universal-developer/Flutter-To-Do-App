@@ -15,22 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _screens = [
-    HomeScreen(),
-    CalendarScreen(),
-    AddItemScreen(),
-    FocuseScreen(),
-    ProfileScreen()
-  ];
-
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

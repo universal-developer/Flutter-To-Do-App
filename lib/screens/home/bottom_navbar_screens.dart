@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:up_todo_app/colors.dart';
@@ -33,32 +35,27 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Future _openToDo() => showDialog(
         context: context,
         builder: (context) => AlertDialog(
-            backgroundColor: Colors.transparent,
-            insetPadding: EdgeInsets.all(10),
-            title: Container(
-                width: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: backgroundColor,
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                    'Add New Task',
-                    style: TextStyle(color: whiteColor),
-                  ),
-                )),
-            content: Stack(
-              children: <Widget>[
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                  ),
-                ),
-              ],
-            )),
+          title: Text('Add new task'),
+          backgroundColor: backgroundColor,
+          content: TextField(
+            obscureText: true,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Password',
+            ),
+          ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(CupertinoIcons.line_horizontal_3_decrease)),
+          ],
+        ),
       );
 
   @override
