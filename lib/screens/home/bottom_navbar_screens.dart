@@ -31,21 +31,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
         return AlertDialog(
           insetPadding: const EdgeInsets.all(0),
           shape: const RoundedRectangleBorder(
-              borderRadius:
-              BorderRadius.all(
-                  Radius.circular(10.0))),
-            backgroundColor: Color(0xFF363636),
-            title: const Text('Add Task', style: TextStyle(color: Colors.white)),
-            content: SizedBox(
-              width: 300,
-              height: 125,
-              child: Column(
-                children: <Widget>[
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: const InputDecoration(
-                      /*suffixIcon: IconButton(
+              borderRadius: BorderRadius.all(Radius.circular(10.0))),
+          backgroundColor: Color(0xFF363636),
+          title: const Text('Add Task', style: TextStyle(color: Colors.white)),
+          content: SizedBox(
+            width: 300,
+            height: 125,
+            child: Column(
+              children: <Widget>[
+                TextFormField(
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  decoration: const InputDecoration(
+                    /*suffixIcon: IconButton(
                   color: Colors.white,
                   icon: Icon(
                     _emailController.text.isNotEmpty
@@ -55,34 +52,34 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   ),
                   onPressed: () {}),
                   */
-                      filled: false,
-                      labelText: 'Task Name',
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      hoverColor: Colors.grey,
-                      focusColor: Colors.grey,
-                      hintText: 'Do Math',
-                      hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
-                      labelStyle: TextStyle(color: Colors.grey),
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 20.0),
-                      border: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
+                    filled: false,
+                    labelText: 'Task Name',
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    hoverColor: Colors.grey,
+                    focusColor: Colors.grey,
+                    hintText: 'Do Math',
+                    hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                    labelStyle: TextStyle(color: Colors.grey),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
                     ),
-                    /*onSaved: (String? value) {
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                  ),
+                  /*onSaved: (String? value) {
                   // This optional block of code can be used to run
                   // code when the user saves the form.
                 },
@@ -91,13 +88,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     ? 'Do not use the @ char.'
                     : null;
                 },*/
-                  ),
-                  const SizedBox(height: 25),
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(fontSize: 14, color: Colors.white),
-                    decoration: const InputDecoration(
-                      /*suffixIcon: IconButton(
+                ),
+                const SizedBox(height: 25),
+                TextFormField(
+                  style: const TextStyle(fontSize: 14, color: Colors.white),
+                  decoration: const InputDecoration(
+                    /*suffixIcon: IconButton(
                   color: Colors.white,
                   icon: Icon(
                     _emailController.text.isNotEmpty
@@ -107,34 +103,34 @@ class _BottomNavBarState extends State<BottomNavBar> {
                   ),
                   onPressed: () {}),
                   */
-                      filled: false,
-                      labelText: 'Description',
-                      floatingLabelBehavior: FloatingLabelBehavior.never,
-                      hoverColor: Colors.grey,
-                      focusColor: Colors.grey,
-                      hintText: 'Solve the equation',
-                      hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
-                      labelStyle: TextStyle(color: Colors.grey),
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: 0.0, horizontal: 20.0),
-                      border: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide:
-                        BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
-                      ),
+                    filled: false,
+                    labelText: 'Description',
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    hoverColor: Colors.grey,
+                    focusColor: Colors.grey,
+                    hintText: 'Solve the equation',
+                    hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
+                    labelStyle: TextStyle(color: Colors.grey),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
+                    border: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
                     ),
-                    /*onSaved: (String? value) {
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
+                    ),
+                  ),
+                  /*onSaved: (String? value) {
                   // This optional block of code can be used to run
                   // code when the user saves the form.
                 },
@@ -143,32 +139,35 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     ? 'Do not use the @ char.'
                     : null;
                 },*/
-                  ),
-
-
-                ],
-              ),
-
+                ),
+              ],
             ),
+          ),
           actions: <Widget>[
-
             Row(
               children: [
                 IconButton(
-                    onPressed: () {Navigator.of(context).pop();},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(CupertinoIcons.clock, color: whiteColor)),
                 IconButton(
-                    onPressed: () {Navigator.of(context).pop();},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(CupertinoIcons.tag, color: whiteColor)),
-
                 IconButton(
-                    onPressed: () {Navigator.of(context).pop();},
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
                     icon: Icon(CupertinoIcons.flag, color: whiteColor)),
                 const Spacer(),
-
                 IconButton(
-                    onPressed: () {Navigator.of(context).pop();},
-                    icon: Icon(CupertinoIcons.arrowshape_turn_up_right, color: whiteColor)),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: Icon(CupertinoIcons.arrowshape_turn_up_right,
+                        color: whiteColor)),
               ],
             ),
           ],
@@ -177,15 +176,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     double height = 65;
-
 
     const shadowColor = Colors.grey;
     double elevation = 100;

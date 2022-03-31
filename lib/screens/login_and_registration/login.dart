@@ -63,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextFormField(
                   controller: _nameController,
-                  keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(fontSize: 14, color: Colors.white),
                   decoration: const InputDecoration(
                     /*suffixIcon: IconButton(
@@ -84,8 +83,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'required',
                     hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
                     labelStyle: TextStyle(color: Colors.grey),
-                    contentPadding: EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 20.0),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
                     border: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
@@ -150,8 +149,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'required',
                     hintStyle: TextStyle(color: Color(0xFF6D6D6D)),
                     labelStyle: TextStyle(color: Colors.grey),
-                    contentPadding: EdgeInsets.symmetric(
-                        vertical: 0.0, horizontal: 20.0),
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
                     border: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: Color(0xFF6D6D6D), width: 1.0),
