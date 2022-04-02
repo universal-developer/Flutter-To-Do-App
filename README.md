@@ -12,7 +12,7 @@
 
 git clone https://github.com/universal-developer/UpTodo-app
 
-flutter run UpTodo.app
+flutter run UpTodo-app
 
 ```
 
