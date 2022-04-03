@@ -1,4 +1,4 @@
-<h1>Flutter Nike Shop App</h1>
+<h1>Flutter UpTodoApp</h1>
 
 <h2>Screens: </h2>
 

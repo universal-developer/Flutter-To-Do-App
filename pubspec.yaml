@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  smart_calendar: ^0.0.2
   dots_indicator: ^2.1.0
   font_awesome_flutter: ^9.2.0
 
