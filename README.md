@@ -2,8 +2,7 @@
 
 <h2>Screens: </h2>
 
-<img src="images/1st.png" height="350px"/><img src="images/2nd.png" height="350px"/><img src="images/3rd.png" height="350px"/><img src="images/4th.png" height="350px"/><img src="images/5th.png" height="350px"/><img src="images/6th.png" height="350px"/><img src="images/7th.png" height="350px"/>
-
+<img src="images/1st.png" height="350px"/>&nbsp;<img src="images/2nd.png" height="350px"/>&nbsp;<img src="images/3rd.png" height="350px"/>&nbsp;<img src="images/4th.png" height="350px"/>&nbsp;<img src="images/5th.png" height="350px"/>&nbsp;<img src="images/6th.png" height="350px"/>&nbsp;<img src="images/7th.png" height="350px"/>
 
 
 <h2>Usage: </h2>
@@ -12,7 +11,11 @@
 
 git clone https://github.com/universal-developer/UpTodo-app
 
-flutter run UpTodo-app
+cd UpTodo-app
+
+flutter pub get
+
+flutter run
 
 ```
 
