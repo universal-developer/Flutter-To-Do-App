@@ -1,4 +1,4 @@
-<h1>Flutter UpTodoApp</h1>
+<h1>Flutter To Do App</h1>
 
 <h2>Screens: </h2>
 
@@ -9,9 +9,9 @@
 
 ```bash
 
-git clone https://github.com/universal-developer/UpTodo-app
+git clone https://github.com/universal-developer/Flutter-To-Do-App
 
-cd UpTodo-app
+cd Flutter-To-Do-App
 
 flutter pub get
 
